@@ -34,3 +34,7 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+      
+      - name: Check workflow name modified?
+        run: |
+          bash -c "grep '^name: CI' .github/workflows/*.yml;test \${?} -eq 1
